@@ -15,14 +15,14 @@ np.random.seed(812)
 plots_11=False
 second_validation=True
 
-fruits_DT=0
-phones_DT=0
-fruits_boosting=0
-phones_boosting=0
-fruits_KNN=0
-phones_KNN=0
-fruits_NN=0
-phones_NN=0
+fruits_DT=1
+phones_DT=1
+fruits_boosting=1
+phones_boosting=1
+fruits_KNN=1
+phones_KNN=1
+fruits_NN=1
+phones_NN=1
 fruits_SVM=1
 phones_SVM=1
 
