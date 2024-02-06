@@ -204,7 +204,7 @@ if fruits_boosting :
     y_test=fruits_test_y
     search_param = {
     "estimator__splitter": ["best", "random"],
-    "estimator__max_depth": [1,2,3,4],
+    "estimator__max_depth": np.linspace(1, 10, 10).astype(int),
     'n_estimators': np.linspace(10,50,6).astype(int),
     'estimator__criterion': ['entropy', 'gini']
 }
@@ -235,7 +235,7 @@ if fruits_boosting :
 
     if second_validation:
         curve_param_name = 'estimator__max_depth'
-        curve_param = np.linspace(1, 5, 5).astype(int)
+        curve_param = np.linspace(1, 10, 10).astype(int)
         verbose = "Fruits boosting"
         title = "Validation curve " + verbose
         if plots_11:
@@ -247,7 +247,7 @@ if fruits_boosting :
                               file_name)
 
         file_name = "fruits_boosting_1.png"
-        plot_12(x_1, y_1, curve_param, title, learn_x, x_2, y_2, curve_param_1, title, x_label, file_name)
+        plot_12(x_1, y_1, curve_param, title, curve_param_name, x_2, y_2, curve_param_1, title, x_label, file_name)
 
 if phones_boosting :
     Classifier=AdaBoostClassifier(DecisionTreeClassifier())
@@ -257,7 +257,7 @@ if phones_boosting :
     y_test = phones_test_y
     search_param = {
     "estimator__splitter": ["best", "random"],
-    "estimator__max_depth": [1,2,3,4],
+    "estimator__max_depth": np.linspace(1, 10, 10).astype(int),
     'n_estimators': np.linspace(10,50,6).astype(int),
     'estimator__criterion': ['entropy', 'gini']
 }
@@ -288,7 +288,7 @@ if phones_boosting :
 
     if second_validation:
         curve_param_name = 'estimator__max_depth'
-        curve_param = np.linspace(1, 5, 5).astype(int)
+        curve_param = np.linspace(1, 10, 10).astype(int)
         verbose = "Phones boosting"
         title = "Validation curve " + verbose
         if plots_11:
@@ -300,7 +300,7 @@ if phones_boosting :
                               file_name)
 
         file_name = "phones_boosting_1.png"
-        plot_12(x_1, y_1, curve_param, title, learn_x, x_2, y_2, curve_param_1, title_1, x_label_1, file_name)
+        plot_12(x_1, y_1, curve_param, title, curve_param_name, x_2, y_2, curve_param_1, title_1, x_label_1, file_name)
 
 
 if fruits_KNN :
