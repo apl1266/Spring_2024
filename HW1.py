@@ -399,19 +399,30 @@ if fruits_NN :
 
     x_1,y_1, Classifier=lerning_best(x,y,Classifier,'f1_weighted',search_param,curve_param,title,learn_x,5,file_name,verbose,x_test,y_test)
 
-    curve_param_name="hidden_layer_sizes"
-    curve_param_1=[[10,30],[20,30],[30,30],[40,30],[50,30]]
+    curve_param_name="n_iter_no_change"
+    curve_param_1=[1,2,3,4,5,6,7,8,9,10]
     verbose = "Fruits NN"
-    title_1 = "Validation curve "+verbose
+    title_1 = "Learning curve epochs "+verbose
+    if plots_11:
+        file_name = "fruits_learning_curve_NN_1.png"
+    else:
+        file_name = False
+    x_label_1=curve_param_name
+    x_2,y_2=validation(x, y, Classifier, 'f1_weighted', curve_param_name, curve_param_1, "learning curve fruits, epochs", x_label_1,5,file_name)
+
+    file_name = "fruits_NN.png"
+    plot_12(x_1, y_1, curve_param*len(x), title, learn_x, x_2, y_2, curve_param_1, "learning curve fruits, epochs", x_label_1, file_name)
+
+    curve_param_name = "hidden_layer_sizes"
+    curve_param_1 = [[10, 30], [20, 30], [30, 30], [40, 30], [50, 30]]
+    verbose = "Fruits NN"
+    title_1 = "Validation curve " + verbose
     if plots_11:
         file_name = "fruits_validation_curve_NN.png"
     else:
         file_name = False
-    x_label_1=curve_param_name
-    x_2,y_2=validation(x, y, Classifier, 'f1_weighted', curve_param_name, np.array(curve_param_1)[:,0], "validation curve fruits, neurons per layer", x_label_1,5,file_name)
-
-    file_name = "fruits_NN.png"
-    plot_12(x_1, y_1, curve_param*len(x), title, learn_x, x_2, y_2, np.array(curve_param_1)[:,0], "validation curve fruits, neurons per layer", x_label_1, file_name)
+    x_label_1 = curve_param_name
+    x_2, y_2 = validation(x, y, Classifier, 'f1_weighted', curve_param_name, np.array(curve_param_1)[:, 0],"validation curve fruits, neurons per layer", x_label_1, 5, file_name)
     if second_validation:
         curve_param_name = "hidden_layer_sizes"
         curve_param = [[20, 10], [20, 20], [20, 30], [20, 40], [20, 50]]
@@ -452,19 +463,30 @@ if phones_NN:
 
     x_1,y_1, Classifier=lerning_best(x,y,Classifier,'f1_weighted',search_param,curve_param,title,learn_x,5,file_name,verbose,x_test,y_test)
 
-    curve_param_name="hidden_layer_sizes"
-    curve_param_1=[[10,30],[20,30],[30,30],[40,30],[50,30],[60,30],[70,30]]
+    curve_param_name = "n_iter_no_change"
+    curve_param_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     verbose = "Phones NN"
-    title_1 = "Validation curve "+verbose
+    title_1 = "Learning curve epochs"+verbose
+    if plots_11:
+        file_name = "phones_lurning_curve_NN_1.png"
+    else:
+        file_name = False
+    x_label_1=curve_param_name
+    x_2,y_2=validation(x, y, Classifier, 'f1_weighted', curve_param_name, curve_param_1, "learning curve phones, epochs", x_label_1,5,file_name)
+
+    file_name = "phones_NN.png"
+    plot_12(x_1, y_1, curve_param*len(x), title, learn_x, x_2, y_2, curve_param_1, "learning curve phones, epochs", x_label_1, file_name)
+
+    curve_param_name = "hidden_layer_sizes"
+    curve_param_1 = [[10, 30], [20, 30], [30, 30], [40, 30], [50, 30], [60, 30], [70, 30]]
+    verbose = "Phones NN"
+    title_1 = "Validation curve " + verbose
     if plots_11:
         file_name = "phones_validation_curve_NN.png"
     else:
         file_name = False
-    x_label_1=curve_param_name
-    x_2,y_2=validation(x, y, Classifier, 'f1_weighted', curve_param_name, np.array(curve_param_1)[:,0], "validation curve phones, neurons per layer", x_label_1,5,file_name)
-
-    file_name = "phones_NN.png"
-    plot_12(x_1, y_1, curve_param*len(x), title, learn_x, x_2, y_2, np.array(curve_param_1)[:,0], "validation curve phones, neurons per layer", x_label_1, file_name)
+    x_label_1 = curve_param_name
+    x_2, y_2 = validation(x, y, Classifier, 'f1_weighted', curve_param_name, np.array(curve_param_1)[:, 0],"validation curve phones, neurons per layer", x_label_1, 5, file_name)
 
     if second_validation:
         curve_param_name = "hidden_layer_sizes"
