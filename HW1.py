@@ -313,7 +313,7 @@ if fruits_KNN :
     "weights": ["uniform", "distance"],
     "algorithm":["ball_tree", "kd_tree", "brute"],
     "leaf_size": [1,2,3,4,5,6,7,8,9,10,20,30,40],
-    "n_neighbors": np.linspace(1, 20, 21).astype(int),
+    "n_neighbors": np.linspace(1, 20, 20).astype(int),
 }
     curve_param=np.linspace(0.25,1,20)
     verbose = "Fruits KNN"
@@ -326,7 +326,7 @@ if fruits_KNN :
     x_1,y_1, Classifier=lerning_best(x,y,Classifier,'f1_weighted',search_param,curve_param,title,learn_x,5,file_name,verbose,x_test,y_test)
 
     curve_param_name="n_neighbors"
-    curve_param_1=np.linspace(1, 20, 21).astype(int)
+    curve_param_1=np.linspace(1, 20, 20).astype(int)
     verbose = "Fruits KNN"
     title_1 = "Validation curve "+verbose
     if plots_11:
