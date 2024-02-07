@@ -348,8 +348,8 @@ if phones_KNN :
     search_param = {
     "weights": ["uniform", "distance"],
     "algorithm":["ball_tree", "kd_tree", "brute"],
-    "leaf_size": [1,2,3,4,5,6,7,8,9,10],
-    "n_neighbors": np.linspace(1, 200, 21).astype(int),
+    "leaf_size": [1,2],
+    "n_neighbors": np.linspace(1, 300, 21).astype(int),
 }
     curve_param=np.linspace(0.25,1,20)
     verbose = "Phones KNN"
@@ -362,7 +362,7 @@ if phones_KNN :
     x_1,y_1, Classifier=lerning_best(x,y,Classifier,'f1_weighted',search_param,curve_param,title,learn_x,5,file_name,verbose,x_test,y_test)
 
     curve_param_name="n_neighbors"
-    curve_param_1=np.linspace(1, 200, 21).astype(int)
+    curve_param_1=np.linspace(1, 500, 50).astype(int)
     verbose = "Phones KNN"
     title_1 = "Validation curve "+verbose
     if plots_11:
@@ -400,7 +400,7 @@ if fruits_NN :
     x_1,y_1, Classifier=lerning_best(x,y,Classifier,'f1_weighted',search_param,curve_param,title,learn_x,5,file_name,verbose,x_test,y_test)
 
     curve_param_name="n_iter_no_change"
-    curve_param_1=[1,2,3,4,5,6,7,8,9,10]
+    curve_param_1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     verbose = "Fruits NN"
     title_1 = "Learning curve epochs "+verbose
     if plots_11:
@@ -414,7 +414,7 @@ if fruits_NN :
     plot_12(x_1, y_1, curve_param*len(x), title, learn_x, x_2, y_2, curve_param_1, "learning curve fruits, epochs", x_label_1, file_name)
 
     curve_param_name = "hidden_layer_sizes"
-    curve_param_1 = [[10, 30], [20, 30], [30, 30], [40, 30], [50, 30]]
+    curve_param_1 = [[10, 30], [20, 30], [30, 30], [40, 30], [50, 30], [60, 30], [70, 30],[80, 30],[90, 30], [100, 30]]
     verbose = "Fruits NN"
     title_1 = "Validation curve " + verbose
     if plots_11:
@@ -425,7 +425,7 @@ if fruits_NN :
     x_2, y_2 = validation(x, y, Classifier, 'f1_weighted', curve_param_name, np.array(curve_param_1)[:, 0],"validation curve fruits, neurons per layer", x_label_1, 5, file_name)
     if second_validation:
         curve_param_name = "hidden_layer_sizes"
-        curve_param = [[20, 10], [20, 20], [20, 30], [20, 40], [20, 50]]
+        curve_param = [[20, 10], [20, 20], [20, 30], [20, 40], [20, 50],[20, 60],[20, 70],[20, 80],[20, 90],[20, 100]]
         verbose = "Fruits NN"
         title = "Validation curve " + verbose
         if plots_11:
@@ -464,7 +464,7 @@ if phones_NN:
     x_1,y_1, Classifier=lerning_best(x,y,Classifier,'f1_weighted',search_param,curve_param,title,learn_x,5,file_name,verbose,x_test,y_test)
 
     curve_param_name = "n_iter_no_change"
-    curve_param_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    curve_param_1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     verbose = "Phones NN"
     title_1 = "Learning curve epochs"+verbose
     if plots_11:
@@ -478,7 +478,7 @@ if phones_NN:
     plot_12(x_1, y_1, curve_param*len(x), title, learn_x, x_2, y_2, curve_param_1, "learning curve phones, epochs", x_label_1, file_name)
 
     curve_param_name = "hidden_layer_sizes"
-    curve_param_1 = [[10, 30], [20, 30], [30, 30], [40, 30], [50, 30], [60, 30], [70, 30]]
+    curve_param_1 = [[10, 30], [20, 30], [30, 30], [40, 30], [50, 30], [60, 30], [70, 30],[80, 30],[90, 30], [100, 30]]
     verbose = "Phones NN"
     title_1 = "Validation curve " + verbose
     if plots_11:
@@ -490,7 +490,7 @@ if phones_NN:
 
     if second_validation:
         curve_param_name = "hidden_layer_sizes"
-        curve_param = [[30, 10], [30, 20], [30, 30], [30, 40], [30, 50]]
+        curve_param = [[30, 10], [30, 20], [30, 30], [30, 40], [30, 50],[30, 60],[30, 70],[30, 80],[30, 90],[30, 100]]
         verbose = "Phones NN"
         title = "Validation curve " + verbose
         if plots_11:
